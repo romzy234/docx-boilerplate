@@ -1,0 +1,30 @@
+{
+  "name": "docx-boilerplate",
+  "version": "1.0.0",
+  "description": "A nodejs Terminal Cli to start or inital my assignment page 1 ",
+  "main": "index.js",
+  "scripts": {
+    "test": "node start",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romzy234/docx-boilerplate.git"
+  },
+  "keywords": [
+    "Node",
+    "NodeJs",
+    "Docx.js"
+  ],
+  "author": "Cyril",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/romzy234/docx-boilerplate/issues"
+  },
+  "homepage": "https://github.com/romzy234/docx-boilerplate#readme",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "docx": "^5.3.0",
+    "nedb": "^1.8.0"
+  }
+}
