@@ -3,8 +3,7 @@ const docx = require("docx");
 const { Document, Packer, Paragraph, TextRun } = docx;
 const chalk = require('chalk');
 var figlet = require('figlet');
-
-exports.generator = (fileName, creator, matNo, depertment, courseCode, courseTitle, question )=>{
+ 
 figlet('Assignment-Tool', function(err, data) {
     if (err) {
         console.log('Something went wrong...');
@@ -13,13 +12,16 @@ figlet('Assignment-Tool', function(err, data) {
     }
     console.log(chalk.red(data))
 });
-console.log();console.log();console.log();
+
 console.log(chalk.blue('Application Started!'));
 
 const doc = new Document({
-    creator: creator,
-    description: question,
+    creator: "Cyril Ogoh",
+    description: "My Assignment ;-(",
     title: "Assignment",
+    background: {
+        color: "C45911",
+    },
 });
 
 doc.addSection({
@@ -29,7 +31,7 @@ doc.addSection({
             children: [
                 new TextRun("Hello World"),
                 new TextRun({
-                    text: `Foo Bar This is my mat Number ${matNo} \n ${depertment}\n${courseCode}\n${courseTitle}\n`,
+                    text: "Foo Bar",
                     bold: true,
                 }),
                 new TextRun({
@@ -40,10 +42,8 @@ doc.addSection({
         }),
     ],
 });
-var file = fileName + '.docx'
+
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync(file, buffer);
+    fs.writeFileSync("cyril.docx", buffer);
 });
 console.log(chalk.greenBright('Am Done!'));
-
-}
