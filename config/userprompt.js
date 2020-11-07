@@ -1,6 +1,7 @@
+const { hwb } = require('chalk');
 const readline = require('readline');
 const data = [];
-const gene = require('./index')
+const gene = require('../index')
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -26,30 +27,35 @@ rl.question('File Name? \n', (answer) => {
       data.push(answer)
       console.log(` feedback: ${answer}`);
         //4th Question
-      rl.question('What your DEPARTMENT? \n', (answer) => {
+      rl.question('What your Level? \n', (answer) => {
         // Logic
         data.push(answer)
         console.log(` feedback: ${answer}`);
           //5th Question
-          rl.question('ASSIGNMENT COURSE TITLE ? \n', (answer) => {
+          rl.question('What your DEPARTMENT? ? \n', (answer) => {
             // Logic
             data.push(answer)
             console.log(`Your feedback is feedback: ${answer}`);
           //6th Question
-          rl.question('What Is The COURSE CODE ? \n', (answer) => {
+          rl.question('ASSIGNMENT COURSE TITLE ? \n', (answer) => {
             // Logic
             data.push(answer)
             console.log(`Your feedback is feedback: ${answer}`);
               //7th Question
-              rl.question(' The Assignment QUESTIONS ? \n', (answer) => {
+              rl.question('What Is The COURSE CODE  ? \n', (answer) => {
                 // Logic
                 data.push(answer)
                 console.log(`feedback: ${answer}`);
-                rl.close();
-                console.log(data)
-                var a = data[0]; var b = data[1]; var c = data[2];var d = data[3];var e = data[4];var f = data[5];var g = data[6];
-                gene.generator(a,b,c,d,e,f,g)
+                  //6th Question
+                  rl.question('The Assignment QUESTIONS ? \n', (answer) => {
+                    // Logic
+                    data.push(answer)
+                        rl.close();
+                      // console.log(data)
+                        var a = data[0]; var b = data[1]; var c = data[2];var d = data[3];var e = data[4];var f = data[5];var g = data[6]; var h = data[7]
+                        gene.generator(a,b,c,d,e,f,g,h);
 
+          });
           });
           });
           });
